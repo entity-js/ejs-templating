@@ -38,8 +38,13 @@ describe('ejs/templating', function () {
 
   afterEach(function () {
 
-    var name = require.resolve('../lib');
-    delete require.cache[name];
+    global._ejsStatic['ejs-templating'] = {
+      _locals: {},
+      _templates: {},
+      _engines: {}
+    };
+
+    delete require.cache[require.resolve('../lib')];
 
   });
 
