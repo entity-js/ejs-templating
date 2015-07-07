@@ -12,21 +12,19 @@
  */
 
 var util = require('util'),
-    test = require('unit.js');
+    test = require('unit.js'),
+    Engine = require('../lib/engine'),
+    EUnknownEngine = require('../lib/errors/EUnknownEngine'),
+    EUnknownTemplate = require('../lib/errors/EUnknownTemplate'),
+    EInvalidEngine = require('../lib/errors/EInvalidEngine');
+
+var Templating;
 
 describe('ejs/templating', function () {
 
   'use strict';
 
-  var Templating,
-      Engine = require('../lib/engine'),
-      EUnknownEngine = require('../lib/errors/EUnknownEngine'),
-      EUnknownTemplate = require('../lib/errors/EUnknownTemplate'),
-      EInvalidEngine = require('../lib/errors/EInvalidEngine');
-
   function TestEngine () {
-    'use strict';
-
     TestEngine.super_.call(this);
   }
 
